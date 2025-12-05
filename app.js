@@ -25,6 +25,8 @@ function center() {
 function olist() {
     var editor = document.getElementById("editor");
     editor.classList.toggle("olist");
+        var list = prompt("Enter the list items:");
+ document.execCommand("createList",false,list) 
 }
 function ulist() {
     var editor = document.getElementById("editor");
