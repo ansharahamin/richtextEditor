@@ -29,6 +29,14 @@ function olist() {
 function ulist() {
     var editor = document.getElementById("editor");
     editor.classList.toggle("ulist");
+    var list = prompt("Enter the list items:");
+ document.execCommand("createList",false,list) 
+}
+function addLink() {
+    var editor = document.getElementById("editor");
+    editor.classList.toggle("link");
+ var url = prompt("Enter the URL:");
+ document.execCommand("createLink",false,url)
 }
 function foreColor() {
     var editor = document.getElementById("editor");
@@ -36,7 +44,7 @@ function foreColor() {
 }
 function foreColor() {
     var editor = document.getElementById("editor");
-    editor.classList.toggle("foreColor");
+    editor.classList.toggle("");
 }
 function changeColor(className) {
   const selection = window.getSelection();
