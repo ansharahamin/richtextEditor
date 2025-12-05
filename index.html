@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rich Text Editor</title>
+
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="editor-container">
+
+  <!-- TOOLBAR -->
+  <div class="toolbar">
+    <button onclick="bold()"><b>B</b></button>
+    <button onclick="italic()"><i>I</i></button>
+    <button onclick="underline()"><u>U</u></button>
+
+    <select onchange="">
+      <option value="3">Size</option>
+      <option value="2">Small</option>
+      <option value="3">Normal</option>
+      <option value="5">Large</option>
+      <option value="7">Huge</option>
+    </select>
+
+<input id="color" type="color" onclick="color()" /> 
+<button onclick="changeColor('red')">Red</button>
+<button onclick="changeColor('blue')">Blue</button>
+
+
+    <button onclick="left()">Left</button>
+    <button onclick="center()">Center</button>
+    <button onclick="right()">Right</button>
+
+    <button onclick="olist()">• List</button>
+    <button onclick="ulist()">1. List</button>
+
+    <button onclick="addLink()">Link</button>
+    <button onclick="addImage()">Image</button>
+
+    <button onclick="undo()">Undo</button>
+    <button onclick="redo()">Redo</button>
+  </div>
+
+  <!-- EDITOR AREA -->
+  <div id="editor" contenteditable="true">
+    Start writing here...
+  </div>
+</div>
+
+<script src="app.js"></script>
+
+</script>
+
+</body>
+</html>
