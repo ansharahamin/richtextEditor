@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Rich Text Editor</title>
 
@@ -9,50 +10,82 @@
 
 <body>
 
-<div class="editor-container">
+  <div class="editor-container">
 
-  <!-- TOOLBAR -->
-  <div class="toolbar">
-    <button onclick="bold()"><b>B</b></button>
-    <button onclick="italic()"><i>I</i></button>
-    <button onclick="underline()"><u>U</u></button>
-
-    <select onchange="">
-      <option value="3">Size</option>
-      <option value="2">Small</option>
-      <option value="3">Normal</option>
-      <option value="5">Large</option>
-      <option value="7">Huge</option>
-    </select>
-
-<input id="color" type="color" onclick="color()" /> 
-<button onclick="changeColor('red')">Red</button>
-<button onclick="changeColor('blue')">Blue</button>
+    <!-- TOOLBAR -->
+    <div class="toolbar">
+      <button onclick="bold()"><b>B</b></button>
+      <button onclick="italic()"><i>I</i></button>
+      <button onclick="underline()"><u>U</u></button>
+      <button onclick="highlightText()"><i class="fa-solid fa-highlighter"></i></button>
+      <select onchange="setFontSize(this.value)">
+        <option value="3">Size</option>
+        <option value="2">Small</option>
+        <option value="3">Normal</option>
+        <option value="5">Large</option>
+        <option value="7">Huge</option>
+      </select>
+      <input type="color" id="colorPicker" onchange="setColor(this.value)">
 
 
-    <button onclick="left()">Left</button>
-    <button onclick="center()">Center</button>
-    <button onclick="right()">Right</button>
 
-    <button id="ul" onclick="ulist()">• List</button>
-    <button id="ol" onclick="olist()">1. List</button>
+      <button onclick="left()"><i class="fa-solid fa-align-left"></i></button>
+      <button onclick="center()"><i class="fa-solid fa-align-center"></i></button>
+      <button onclick="right()"><i class="fa-solid fa-align-right"></i></button>
 
-    <button id="link" onclick="addLink()">Link</button>
-    <button onclick="addImage()">Image</button>
+      <button id="ul" onclick="ulist()"><i class="fa-solid fa-list-ul"></i></button>
+      <button id="ol" onclick="olist()"><i class="fa-solid fa-list-ol"></i></button>
+      <button id="quote" onclick="quote()"><i class="fa-solid fa-quote-left"></i></button>
 
-    <button onclick="undo()">Undo</button>
-    <button onclick="redo()">Redo</button>
+      <button id="link" onclick="addLink()">
+
+        <i class="fa-solid fa-link"></i></button>
+      <button onclick="addImage()">Image</button>
+      <button onclick="indentText()"><i class="fa-solid fa-indent"></i></button>
+      <button onclick="outdentText()">Decrease Indent</button>
+      <button onclick="undo()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+          class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5" />
+        </svg></button>
+      <button onclick="redo()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+          class="bi bi-arrow-return-right" viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5" />
+        </svg></button>
+      <select id="emojiSelect">
+        <option value="">Select Emoji</option>
+        <!-- Faces -->
+        <option value="😀">😀 Grinning</option>
+        <option value="😂">😂 Laugh</option>
+        <option value="😍">😍 Heart Eyes</option>
+        <option value="🤔">🤔 Thinking</option>
+        <option value="🥳">🥳 Party</option>
+        <!-- Hands -->
+        <option value="👍">👍 Thumbs Up</option>
+        <option value="👎">👎 Thumbs Down</option>
+        <option value="👏">👏 Clapping</option>
+        <!-- Hearts -->
+        <option value="❤️">❤️ Red Heart</option>
+        <option value="💛">💛 Yellow Heart</option>
+        <option value="💖">💖 Sparkling Heart</option>
+      </select>
+
+
+      <button onclick="eraseFormatting()"><i class="fa-solid fa-eraser"></i></button>
+      <button onclick="clearEditor()"><i class="fa-solid fa-trash"></i></button>
+    </div>
+
+    <!-- EDITOR AREA -->
+    <div id="editor" contenteditable="true">
+      Start writing here...
+    </div>
   </div>
+  <script src="https://kit.fontawesome.com/a6450bd60a.js" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
 
-  <!-- EDITOR AREA -->
-  <div id="editor" contenteditable="true">
-    Start writing here...
-  </div>
-</div>
-
-<script src="app.js"></script>
-
-</script>
+  </script>
 
 </body>
+
 </html>

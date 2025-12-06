@@ -70,3 +70,13 @@
     }
 .red { color: red; }
 .blue { color: blue; }
+.quote::before {
+  content: "“";  /* opening quote */
+}
+
+.quote::after {
+  content: "”";  /* closing quote */
+}
+#emojiBar { display:none; border:1px solid #ccc; padding:5px; margin-top:5px; max-width:350px; flex-wrap: wrap; background:#f9f9f9; }
+  #emojiBar span { cursor:pointer; font-size:24px; margin:3px; transition:0.2s; display:inline-block; }
+  #emojiBar span:hover { background:#eee; border-radius:5px; }
